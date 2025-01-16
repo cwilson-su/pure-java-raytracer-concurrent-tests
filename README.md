@@ -1,3 +1,4 @@
+## original README:
 
 # pure-java-raytracer
 An experimental Ray tracer I made completely from scratch, without any external libraries.  
@@ -15,3 +16,6 @@ I covered the development of this engine in [this video on my YouTube channel.
  - Animated image sequence rendering (any resolution, any framerate)
 
 Rendered images will be saved as `output.png` in the execution directory of the program and image sequences will be saved inside the `image_sequence` folder in the execution directory.
+
+-----------------------------------------------------------------------
+I forked this project to test a custom threapool as well as some Java threadpools in order to parallelize the rendering
