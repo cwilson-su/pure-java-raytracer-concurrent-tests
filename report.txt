@@ -1,0 +1,172 @@
+Comparing processing times:
+--without thread :--
+Rendered in 2068ms
+Rendered in 1990ms
+Rendered in 2014ms
+Rendered in 2017ms
+Rendered in 1964ms
+Rendered in 2579ms
+Rendered in 1903ms
+Rendered in 1948ms
+===> Slow, cuz everything is sequential
+
+===========================USING RUNNABLES TO CREATE THREADS======================
+--one thread per pixel:--
+Rendered in 1104ms
+Rendered in 1177ms
+Rendered in 1242ms
+Rendered in 1153ms
+Rendered in 1564ms
+Rendered in 1685ms
+Rendered in 1286ms
+===> Faster, but too many threads created
+
+--1 thread per column:--
+Rendered in 39ms
+Rendered in 53ms
+Rendered in 40ms
+Rendered in 41ms
+Rendered in 39ms
+Rendered in 54ms
+Rendered in 42ms
+Rendered in 50ms
+===>Fastest, less threads
+
+
+==================================WITH MY 'CUSTOM' THREADPOOL========================================
+ArrayBlockingQueue size= 1000
+ThreadPool size = 1
+Rendered in 30ms
+Rendered in 46ms
+Rendered in 27ms
+Rendered in 30ms
+Rendered in 28ms
+Rendered in 22ms
+Rendered in 37ms
+
+
+ThreadPool size= 4
+Rendered in 23ms
+Rendered in 22ms
+Rendered in 17ms
+Rendered in 24ms
+Rendered in 17ms
+Rendered in 23ms
+Rendered in 22ms
+Rendered in 31ms
+
+ThreadPool size= 8
+Rendered in 21ms
+Rendered in 19ms
+Rendered in 22ms
+Rendered in 21ms
+Rendered in 25ms
+Rendered in 22ms
+Rendered in 22ms
+Rendered in 24ms
+Rendered in 22ms
+Rendered in 18ms
+
+ThreadPool size= 200
+Rendered in 23ms
+Rendered in 20ms
+Rendered in 26ms
+Rendered in 28ms
+Rendered in 26ms
+Rendered in 20ms
+Rendered in 23ms
+Rendered in 30ms
+Rendered in 23ms
+Rendered in 22ms
+Rendered in 26ms
+Rendered in 27ms
+
+
+
+=======================USING ExecutorService.newFixedThreadPool=================================
+ThreadPool size= 1
+Rendered in 23ms
+Rendered in 31ms
+Rendered in 33ms
+Rendered in 27ms
+Rendered in 18ms
+Rendered in 21ms
+Rendered in 31ms
+Rendered in 33ms
+Rendered in 36ms
+Rendered in 23ms
+Rendered in 31ms
+Rendered in 20ms
+
+ThreadPool size= 4
+Rendered in 18ms
+Rendered in 19ms
+Rendered in 19ms
+Rendered in 23ms
+Rendered in 17ms
+Rendered in 19ms
+Rendered in 20ms
+Rendered in 19ms
+Rendered in 19ms
+Rendered in 22ms
+
+ThreadPool size= 8
+Rendered in 25ms
+Rendered in 33ms
+Rendered in 29ms
+Rendered in 41ms
+Rendered in 25ms
+Rendered in 28ms
+Rendered in 20ms
+Rendered in 31ms
+Rendered in 29ms
+Rendered in 28ms
+Rendered in 26ms
+Rendered in 32ms
+Rendered in 26ms
+Rendered in 42ms
+Rendered in 32ms
+Rendered in 33ms
+
+ThreadPool size= 200
+Rendered in 29ms
+Rendered in 25ms
+Rendered in 33ms
+Rendered in 33ms
+Rendered in 30ms
+Rendered in 29ms
+Rendered in 34ms
+Rendered in 41ms
+Rendered in 30ms
+Rendered in 39ms
+Rendered in 34ms
+Rendered in 42ms
+Rendered in 45ms
+Rendered in 49ms
+Rendered in 37ms
+Rendered in 36ms
+
+
+======================ExecutorService.newSingleThreadExecutor=======================
+Rendered in 22ms
+Rendered in 21ms
+Rendered in 19ms
+Rendered in 27ms
+Rendered in 32ms
+Rendered in 22ms
+Rendered in 22ms
+Rendered in 23ms
+Rendered in 23ms
+Rendered in 25ms
+Rendered in 24ms
+Rendered in 22ms
+Rendered in 22ms
+Rendered in 24ms
+Rendered in 24ms
+Rendered in 22ms
+Rendered in 22ms
+Rendered in 28ms
+
+
+========================ExecutorService.ThreadPerTaskExecutor========================
+<incomplete cuz we havent tested all possible threadpools from the ExecutorService)
